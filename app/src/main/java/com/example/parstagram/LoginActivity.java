@@ -71,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private void signupUser(String username, String password) {
-        Log.i(TAG, "Attempting to sign up user" + username);
+        Log.i(TAG, "Attempting to create user " + username);
         ParseUser user = new ParseUser();
 
         user.setUsername(username);
@@ -80,14 +80,9 @@ public class LoginActivity extends AppCompatActivity {
         user.signUpInBackground(new SignUpCallback() {
             @Override
             public void done(ParseException e) {
-                if (e != null) {
-                    Log.e(TAG, "Issue with signup", e);
-                    Toast.makeText(LoginActivity.this, "Issue with signup!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                // Navigate to Main Activity
-                goMainActivity();
-                Toast.makeText(LoginActivity.this, "Success!", Toast.LENGTH_SHORT).show();
+                    // Navigate to Main Activity
+                    goMainActivity();
+                    Toast.makeText(LoginActivity.this, "Success!", Toast.LENGTH_SHORT).show();
             }
         });
     }

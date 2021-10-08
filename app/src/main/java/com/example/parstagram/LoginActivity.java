@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
         user.signUpInBackground(new SignUpCallback() {
             @Override
             public void done(ParseException e) {
-                if (e == null) {
+                if (e != null) {
                     Log.e(TAG, "Issue with signup", e);
                     Toast.makeText(LoginActivity.this, "Issue with signup!", Toast.LENGTH_SHORT).show();
                     return;
